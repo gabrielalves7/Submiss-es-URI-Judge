@@ -1,4 +1,5 @@
- import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,35 +9,19 @@ public class Main {
         int B = input.nextInt();
         int C = input.nextInt();
 
-        if (A > B && A > C && B > C) {
-            System.out.println(C);
-            System.out.println(B);
-            System.out.println(A);
+        int sort[] = new int[3];
 
-        } else if (A > B && A > C && C > B) {
-            System.out.println(B);
-            System.out.println(C);
-            System.out.println(A);
+        sort[0] = A;
+        sort[1] = B;
+        sort[2] = C;
+        Arrays.sort(sort);
 
-        } else if (B > A && B > C && A > C) {
-            System.out.println(C);
-            System.out.println(A);
-            System.out.println(B);
-
-        } else if (B > A && B > C && C > A) {
-            System.out.println(A);
-            System.out.println(C);
-            System.out.println(B);
-
-        } else if (C > A && C > B && A > B) {
-            System.out.println(B);
-            System.out.println(A);
-            System.out.println(C);
-
-        } else {
-            System.out.println(A);
-            System.out.println(B);
-            System.out.println(C);
+        for (int i = 0; i < sort.length; i++) {
+            System.out.println(sort[i]);
         }
+        System.out.println();
+        System.out.println(A);
+        System.out.println(B);
+        System.out.println(C);
     }
 }
